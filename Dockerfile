@@ -1,12 +1,5 @@
-#
-# GitLab CI: Android v0.2
-#
-# https://hub.docker.com/r/jangrewe/gitlab-ci-android/
-# https://git.faked.org/jan/gitlab-ci-android
-#
-
 FROM ubuntu:16.04
-MAINTAINER Jan Grewe <jan@faked.org>
+MAINTAINER Ryan Zoeller <rtzoeller@rtzoeller.com>
 
 ENV VERSION_SDK_TOOLS "25.2.4"
 ENV VERSION_BUILD_TOOLS "25.0.2"
@@ -29,6 +22,8 @@ RUN apt-get -qq update && \
       lib32ncurses5 \
       lib32z1 \
       unzip \
+      python3 \
+      python3-pip \
     && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 RUN rm -f /etc/ssl/certs/java/cacerts; \
