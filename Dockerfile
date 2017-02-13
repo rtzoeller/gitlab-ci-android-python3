@@ -24,7 +24,10 @@ RUN apt-get -qq update && \
       unzip \
       python3 \
       python3-pip \
+      python3-setuptools \
     && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+
+RUN pip3 install --upgrade pip setuptools
 
 RUN rm -f /etc/ssl/certs/java/cacerts; \
     /var/lib/dpkg/info/ca-certificates-java.postinst configure
